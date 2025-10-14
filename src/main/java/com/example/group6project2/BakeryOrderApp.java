@@ -1,5 +1,6 @@
 package com.example.group6project2;
 
+// imports
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,8 +14,10 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// extends Application, overriding start() method to set up the UI
 public class BakeryOrderApp extends Application {
 
+    // fields
     private TextField nameField;
     private TextField phoneField;
     private ComboBox<String> cakeTypeComboBox;
@@ -26,6 +29,7 @@ public class BakeryOrderApp extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Bakery Order System");
 
+        // creates main vertical layout with spacing and padding
         VBox mainLayout = new VBox(20);
         mainLayout.setPadding(new Insets(25));
         mainLayout.getStyleClass().add("main-container");
@@ -35,8 +39,10 @@ public class BakeryOrderApp extends Application {
 
         mainLayout.getChildren().addAll(formSection, buttonSection);
 
+        // setting the scene size to 500X550 pixes
         Scene scene = new Scene(mainLayout, 500, 550);
 
+        // loading external CSS file from the classpath
         try {
             String css = getClass().getResource("/com/example/group6project2/styles.css").toExternalForm();
             scene.getStylesheets().add(css);
@@ -48,6 +54,7 @@ public class BakeryOrderApp extends Application {
         primaryStage.show();
     }
 
+    // builds the form layout using Vbox and GridPane
     private VBox createFormSection() {
         VBox formSection = new VBox(15);
         formSection.getStyleClass().add("form-section");
@@ -60,6 +67,7 @@ public class BakeryOrderApp extends Application {
         grid.setVgap(15);
         grid.setPadding(new Insets(10));
 
+        // Name Label and Input Field
         Label nameLabel = new Label("Customer Name:");
         nameLabel.getStyleClass().add("input-label");
         nameField = new TextField();
@@ -67,7 +75,8 @@ public class BakeryOrderApp extends Application {
         nameField.getStyleClass().add("text-field");
         grid.add(nameLabel, 0, 0);
         grid.add(nameField, 1, 0);
-
+        
+        // Phone Label and Input Field
         Label phoneLabel = new Label("Phone Number:");
         phoneLabel.getStyleClass().add("input-label");
         phoneField = new TextField();
@@ -76,6 +85,7 @@ public class BakeryOrderApp extends Application {
         grid.add(phoneLabel, 0, 1);
         grid.add(phoneField, 1, 1);
 
+        // Cake Label and Combo Box
         Label cakeTypeLabel = new Label("Cake Type:");
         cakeTypeLabel.getStyleClass().add("input-label");
         cakeTypeComboBox = new ComboBox<>();
@@ -88,6 +98,7 @@ public class BakeryOrderApp extends Application {
         grid.add(cakeTypeLabel, 0, 2);
         grid.add(cakeTypeComboBox, 1, 2);
 
+        // Size Label and Radio Buttons
         Label sizeLabel = new Label("Cake Size:");
         sizeLabel.getStyleClass().add("input-label");
         sizeToggleGroup = new ToggleGroup();
@@ -109,6 +120,7 @@ public class BakeryOrderApp extends Application {
         grid.add(sizeLabel, 0, 3);
         grid.add(sizeBox, 1, 3);
 
+        // check box for if in delivery zone
         deliveryCheckBox = new CheckBox("I live within the free delivery area");
         deliveryCheckBox.getStyleClass().add("check-box");
         grid.add(deliveryCheckBox, 0, 4, 2, 1);
@@ -117,6 +129,7 @@ public class BakeryOrderApp extends Application {
         return formSection;
     }
 
+    // creates the buttons and triggers the various functions on click
     private HBox createButtonSection() {
         HBox buttonBox = new HBox(20);
         buttonBox.setAlignment(Pos.CENTER);
@@ -134,6 +147,7 @@ public class BakeryOrderApp extends Application {
         return buttonBox;
     }
 
+    // validates the user input, writes the formatted order data to Orders.txt, and displays alerts
     private void saveOrder() {
         if (!validateInput()) {
             return;
@@ -152,6 +166,7 @@ public class BakeryOrderApp extends Application {
         }
     }
 
+    // checks that each field has an input, and shows warning if input is missing
     private boolean validateInput() {
         if (nameField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "Please enter customer name.", Alert.AlertType.WARNING);
@@ -179,6 +194,7 @@ public class BakeryOrderApp extends Application {
         return true;
     }
 
+    // collects all input values and formats them to a readable string with a time stamp
     private String formatOrderData() {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         String name = nameField.getText().trim();
@@ -193,6 +209,7 @@ public class BakeryOrderApp extends Application {
         );
     }
 
+    // resets the form
     private void resetForm() {
         nameField.clear();
         phoneField.clear();
@@ -201,6 +218,7 @@ public class BakeryOrderApp extends Application {
         deliveryCheckBox.setSelected(false);
     }
 
+    // quits the application and shows a confirmation alert
     private void quitApplication() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirm Exit");
@@ -212,6 +230,7 @@ public class BakeryOrderApp extends Application {
         }
     }
 
+    // utility method to show alerts
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
