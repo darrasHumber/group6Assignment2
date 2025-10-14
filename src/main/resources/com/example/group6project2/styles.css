@@ -1,0 +1,184 @@
+/* Main container styling */
+.main-container {
+    -fx-background-color: linear-gradient(to bottom, #f9f7f4, #e8e1d5);
+    -fx-border-color: #d4c9b8;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Form section styling */
+.form-section {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #e0d6c8;
+    -fx-border-width: 1px;
+    -fx-padding: 25px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 2);
+}
+
+/* Form title styling */
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8b7355;
+    -fx-alignment: center;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: #e0d6c8;
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* Input label styling */
+.input-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5d4c3a;
+}
+
+/* Text field styling */
+.text-field {
+    -fx-background-color: #fdfdfd;
+    -fx-border-color: #d4c9b8;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 14px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 250px;
+}
+
+.text-field:focused {
+    -fx-border-color: #8b7355;
+    -fx-effect: dropshadow(three-pass-box, rgba(139, 115, 85, 0.2), 5, 0, 0, 0);
+}
+
+/* Combo box styling */
+.combo-box {
+    -fx-background-color: #fdfdfd;
+    -fx-border-color: #d4c9b8;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+    -fx-pref-width: 250px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #5d4c3a;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #f0ebe4;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #8b7355;
+}
+
+.combo-box:hover {
+    -fx-border-color: #b8a992;
+}
+
+.combo-box:focused {
+    -fx-border-color: #8b7355;
+    -fx-effect: dropshadow(three-pass-box, rgba(139, 115, 85, 0.2), 5, 0, 0, 0);
+}
+
+/* Radio button styling */
+.radio-button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5d4c3a;
+    -fx-cursor: hand;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #d4c9b8;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: #8b7355;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #8b7355;
+    -fx-background-radius: 50%;
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #b8a992;
+}
+
+/* Check box styling */
+.check-box {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5d4c3a;
+    -fx-cursor: hand;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #d4c9b8;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #8b7355;
+    -fx-border-color: #8b7355;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:hover .box {
+    -fx-border-color: #b8a992;
+}
+
+/* Button styling */
+.save-button {
+    -fx-background-color: #8b7355;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.save-button:hover {
+    -fx-background-color: #7a6347;
+    -fx-effect: dropshadow(three-pass-box, rgba(139, 115, 85, 0.3), 5, 0, 0, 0);
+}
+
+.quit-button {
+    -fx-background-color: #a52a2a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.quit-button:hover {
+    -fx-background-color: #8b0000;
+    -fx-effect: dropshadow(three-pass-box, rgba(165, 42, 42, 0.3), 5, 0, 0, 0);
+}
+
+/* Grid pane styling */
+.grid-pane {
+    -fx-hgap: 15px;
+    -fx-vgap: 15px;
+    -fx-padding: 10px;
+}
