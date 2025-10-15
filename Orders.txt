@@ -2,3 +2,5 @@ Order Time: 2025-10-13 23:59:12 | Name: Mohammed | Phone: 123456789 | Cake: Chee
 Order Time: 2025-10-14 00:00:21 | Name: M | Phone: 1 | Cake: Cheesecake | Size: Medium | Free Delivery: Yes
 Order Time: 2025-10-14 00:04:31 | Name: M | Phone: 123456789 | Cake: Cheesecake | Size: Medium | Free Delivery: No
 Order Time: 2025-10-14 00:07:04 | Name: M | Phone: 666666 | Cake: Apple | Size: Medium | Free Delivery: Yes
+Order Time: 2025-10-15 08:54:17 | Name: Lisa Tarnw | Phone: 416-999-3980 | Cake: Apple | Size: Small | Free Delivery: No
+Order Time: 2025-10-15 09:20:22 | Name: Lisa Tarnow | Phone: (416)999-3980 | Cake: Cheesecake | Size: Medium | Free Delivery: Yes
