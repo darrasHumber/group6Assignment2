@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
+
 // This class is the main entry point to set up the UI and scene
 public class BakeryOrderApp extends Application {
 
@@ -29,8 +31,9 @@ public class BakeryOrderApp extends Application {
 
         // loading external CSS file from class path
         try {
-            String css = getClass().getResource("/com/example/group6project2/styles.css").toExternalForm();
+            String css = getClass().getResource("styles.css").toExternalForm();
             scene.getStylesheets().add(css);
+
         } catch (Exception e) {
             System.err.println("CSS file not found: " + e.getMessage());
         }
